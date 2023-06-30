@@ -1,0 +1,256 @@
+button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+button:hover {
+    color: #fff;
+}
+
+button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+th {
+    background-color: #ff9800;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+/* CSS cho các input type text */
+input[type="text"] {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+}
+
+input[type="text"]:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+    -13px -13px 100px #ffffff;
+}
+
+/*select {*/
+/*    background-color: #1F99CD;*/
+/*    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23ffcc00%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A);*/
+/*    background-position: right 10px center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: auto 50%;*/
+/*    border-radius: 2px;*/
+/*    border: none;*/
+/*    color: #ffffff;*/
+/*    padding: 10px 30px 10px 10px;*/
+/*    outline: none;*/
+/*    -moz-appearance: none;*/
+/*    -webkit-appearance: none;*/
+/*    appearance: none;*/
+/*}*/
+
+/*select::-ms-expand {*/
+/*    display: none;*/
+/*}*/
+
+.ui-checkbox {
+    --primary-color: #1677ff;
+    --secondary-color: #fff;
+    --primary-hover-color: #4096ff;
+    /* checkbox */
+    --checkbox-diameter: 20px;
+    --checkbox-border-radius: 5px;
+    --checkbox-border-color: #d9d9d9;
+    --checkbox-border-width: 1px;
+    --checkbox-border-style: solid;
+    /* checkmark */
+    --checkmark-size: 1.2;
+}
+
+.ui-checkbox,
+.ui-checkbox *,
+.ui-checkbox *::before,
+.ui-checkbox *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ui-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: var(--checkbox-diameter);
+    height: var(--checkbox-diameter);
+    border-radius: var(--checkbox-border-radius);
+    background: var(--secondary-color);
+    border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.ui-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+    box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+    border-radius: inherit;
+    opacity: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    -o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+    transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+
+.ui-checkbox::before {
+    top: 40%;
+    left: 50%;
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 7px;
+    border-right: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    -ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    opacity: 0;
+    -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+    -o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+    transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+}
+
+/* actions */
+
+.ui-checkbox:hover {
+    border-color: var(--primary-color);
+}
+
+.ui-checkbox:checked {
+    background: var(--primary-color);
+    border-color: transparent;
+}
+
+.ui-checkbox:checked::before {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+    -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+
+.ui-checkbox:active:not(:checked)::after {
+    -webkit-transition: none;
+    -o-transition: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    transition: none;
+    opacity: 1;
+}
+.form-container {
+    width: 320px;
+    border-radius: 0.75rem;
+    background-color: rgba(17, 24, 39, 1);
+    padding: 2rem;
+    color: rgba(243, 244, 246, 1);
+}
+
+/*body {*/
+/*    background: linear-gradient(35deg, red, purple);*/
+/*}*/
+/* <select> styles */
+select {
+    /* Reset */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 20em;
+    height: 3em;
+    padding: 0 4em 0 1em;
+    background: linear-gradient(35deg, red, purple);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* <option> colors */
+    /* Remove focus outline */
+    /* Remove IE arrow */
+}
+select option {
+    color: inherit;
+    background-color: #320a28;
+}
+select:focus {
+    outline: none;
+}
+select::-ms-expand {
+    display: none;
+}
